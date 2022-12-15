@@ -34,6 +34,6 @@ public final class RandomFishingEnchant extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().warning("插件已关闭！");
-        HandlerList.unregisterAll();
+        HandlerList.unregisterAll(this);
     }
 }
