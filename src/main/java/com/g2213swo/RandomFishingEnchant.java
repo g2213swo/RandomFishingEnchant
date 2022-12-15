@@ -1,10 +1,13 @@
 package com.g2213swo;
 
-import com.g2213swo.Commands.ReloadCommand;
-import com.g2213swo.Listeners.FishingListener;
+import com.g2213swo.commands.ReloadCommand;
+import com.g2213swo.listeners.FishingListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class RandomFishingEnchant extends JavaPlugin {
     FileConfiguration config = getConfig();
@@ -22,7 +25,7 @@ public final class RandomFishingEnchant extends JavaPlugin {
         config.addDefault("RandomAmount", 5);
         config.options().copyDefaults(true);
         saveConfig();
-        Bukkit.getPluginCommand("enchantfishingreload").setExecutor(new ReloadCommand());
+        Objects.requireNonNull(Bukkit.getPluginCommand("enchantfishingreload")).setExecutor(new ReloadCommand());
         Bukkit.getPluginManager().registerEvents(new FishingListener(), this);
         getLogger().warning("插件已启动！");
     }
@@ -31,5 +34,6 @@ public final class RandomFishingEnchant extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().warning("插件已关闭！");
+        HandlerList.unregisterAll();
     }
 }

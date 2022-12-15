@@ -1,4 +1,4 @@
-package com.g2213swo.Listeners;
+package com.g2213swo.listeners;
 
 import com.g2213swo.RandomFishingEnchant;
 import net.momirealms.customfishing.api.event.FishResultEvent;
@@ -18,7 +18,7 @@ public class FishingListener implements Listener {
     @EventHandler
     public void PlayerCatchFish(FishResultEvent event){
         ItemStack loot = event.getLoot();
-        if (loot != null){
+        if (loot != null && loot.getItemMeta().getDisplayName() != null){
             if (config.getBoolean("RandomEnchantBookReplace")){
                 String displayName = loot.getItemMeta().getDisplayName();
                 if (loot.getType().equals(Material.BOOK) && displayName.equals(config.getString("ReplaceBookName"))){
