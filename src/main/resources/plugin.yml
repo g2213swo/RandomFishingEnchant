@@ -1,0 +1,10 @@
+name: RandomFishingEnchant
+version: '${project.version}'
+main: com.g2213swo.RandomFishingEnchant
+api-version: 1.19
+depend: [ CustomFishing ]
+authors: [ g2213swo ]
+commands:
+  enchantfishingreload:
+    description: "重载配置"
+    usage: /enchantfishingreload
