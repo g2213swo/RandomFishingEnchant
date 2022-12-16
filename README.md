@@ -11,6 +11,6 @@ CustomFishing -
   `ReplaceBookName: ReplaceBook`  
   `RandomEnchantBookReplace: true`  
   
-`RandomAmount` - **附魔书的个数**  
+`RandomAmount` - **随机附魔的个数**  
 `ReplaceBookName` - **要替换的书的名字**  
 `RandomEnchantBookReplace` - **是否开启附魔替换**  
